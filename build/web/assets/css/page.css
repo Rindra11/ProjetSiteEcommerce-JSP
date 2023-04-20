@@ -1,0 +1,110 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: sans-serif;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    box-shadow: 0 5vh 15px rgba(0, 0, 0, 0.06);    
+    z-index: 999;
+    
+}
+.header h3 a{
+   color: #fff;
+}
+.header h6 a{
+    color: #fff;
+}
+
+#hero label h4{
+    padding-bottom: 15px;  
+    padding: 10px;
+}
+#hero h2{
+    color: #f39c12;
+}
+#hero button{
+    background-color: #9b59b6;
+    color: #ca2c68;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 20vh;
+    font-size: 15px;
+}
+#newsletter h4{
+    font-size: 22px;
+    font-weight: 700;
+    color: #F39C12;
+}
+#newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #F39C12;
+}
+#newsletter .form{
+    display: flex;
+    width: 40%;
+}
+#newsletter input{
+    height: 3.125rem;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    outline: none;
+}
+#newsletter button{
+    background-color: #9b59b6;
+    color: #fff;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+footer{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   background: #000;
+   
+}
+footer .col{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin-bottom: 10px;
+}
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+footer .follow{
+    margin-top: 10px;
+}
+footer .follow i{
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer; 
+}
+footer .follow i:hover,
+footer a:hover { 
+    color: #088178;
+}

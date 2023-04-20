@@ -1,0 +1,13 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: sans-serif;
+        background: linear-gradient(135deg, #71b7e6,#9b59b6);
+}
+.navbar{
+    margin: 8vh;
+}
+
+
+
