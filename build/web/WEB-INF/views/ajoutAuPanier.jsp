@@ -4,6 +4,7 @@
     Author     : Rindra
 --%>
 
+<%@page import="dao.Panier"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,7 +32,7 @@
             panier.ajouterProduit(productId);
 
             // Rediriger vers la page du panier
-            response.sendRedirect("pageDuPanier.jsp");
+            response.sendRedirect("ajoutAuPanier.jsp");
             %>
 
     </body>

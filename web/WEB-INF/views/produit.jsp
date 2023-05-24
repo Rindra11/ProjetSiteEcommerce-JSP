@@ -95,7 +95,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="${pageContext.request.contextPath}/supprimer?Id_prod=<c:out value="<%= p.getId_prod() %>"/>"class="btn btn-sm btn-outline-danger">Suppression</a>
                      <!-- Exemple d'option de commande -->
-                <form action="ajouterAuPanier.jsp" method="post">
+                <form action="AjoutAuPanier" method="post">
                   <input type="hidden" name="Id_prod" value="<%= p.getId_prod() %>">
                   <button type="submit" class="btn btn-sm btn-outline-success">Ajouter au panier</button>
                 </form>
