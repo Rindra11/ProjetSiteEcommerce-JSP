@@ -24,6 +24,10 @@
         <servlet-name>ContactServlet</servlet-name>
         <servlet-class>servlet.ContactServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletProduit</servlet-name>
+        <servlet-class>servlet.ServletProduit</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MehodesServlet</servlet-name>
         <url-pattern>/MehodesServlet</url-pattern>
@@ -48,11 +52,13 @@
         <servlet-name>ContactServlet</servlet-name>
         <url-pattern>/ContactServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletProduit</servlet-name>
+        <url-pattern>/ServletProduit</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    
-     
 </web-app>

@@ -1,25 +1,24 @@
 package models;
 
-
 public class Produits {
     private int Id_prod;
     private String Nom_prod,Qte_prod;
-    private String Prix_prod;
+    private Float Prix_prod;
     
-  
+    
     public Produits(){
         super();
     }
-
-    public Produits(int Id_prod, String Nom_prod, String Qte_prod, String Prix_prod) {
+    
+    public Produits(int Id_prod, String Nom_prod, String Qte_prod, Float Prix_prod) {
        super();
         this.Id_prod = Id_prod;
         this.Nom_prod = Nom_prod;
         this.Qte_prod = Qte_prod;
         this.Prix_prod = Prix_prod;
-       
-    }
-     public Produits( String Nom_prod, String Qte_prod, String Prix_prod){
+    
+}
+    public Produits( String Nom_prod, String Qte_prod, Float Prix_prod){
          super();
          this.Nom_prod = Nom_prod;
          this.Qte_prod = Qte_prod;
@@ -51,14 +50,13 @@ public class Produits {
         this.Qte_prod = Qte_prod;
     }
 
-    public String getPrix_prod() {
+    public Float getPrix_prod() {
         return Prix_prod;
     }
 
-    public void setPrix_prod(String Prix_prod) {
+    public void setPrix_prod(Float Prix_prod) {
         this.Prix_prod = Prix_prod;
     }
-
     
-     
+    
 }

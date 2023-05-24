@@ -52,7 +52,6 @@
                            &nbsp;&nbsp;&nbsp;&nbsp;
                           <a href="${pageContext.request.contextPath}/supprimer?Id_Name=<c:out value="${p.Id_Name}"/>"class="btn btn-sm btn-outline-danger">Suppression</a>
                       </td>
-                      <td></td>
                       
                   </tr>
               </c:forEach>

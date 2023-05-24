@@ -85,8 +85,5 @@ public Registre() {
         this.passw = passw;
     }
     
-    
-
-   
-
+  
 }

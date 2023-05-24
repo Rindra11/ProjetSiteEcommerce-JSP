@@ -1,5 +1,6 @@
 package servlet;
 
+import configuration.Dbconnect;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.apache.coyote.http11.Http11AprProcessor;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -21,8 +23,6 @@ public class LoginServlet extends HttpServlet {
          request.getRequestDispatcher("/Login.jsp").forward(request, response);
     }
        
-    
-
    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -32,24 +32,32 @@ public class LoginServlet extends HttpServlet {
         String passsword = request.getParameter("passsword");
         HttpSession session = request.getSession();
         RequestDispatcher dispatcher = null;
+       
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siteecommerce");
+            Connection conn = Dbconnect.getConn();
             PreparedStatement ps = conn.prepareStatement("select * from login where username = ? and passsword = ?");
             ps.setString(1, username);
             ps.setString(2, passsword);
             
             ResultSet res = ps.executeQuery();
             if (res.next()) {
+                
                 session.setAttribute("name", res.getString("username"));
-                dispatcher = request.getRequestDispatcher("/home");
+                dispatcher = request.getRequestDispatcher("/Homepage.jsp");
+                
+                dispatcher.forward(request, response);
+             
             }else {
-                request.setAttribute("status", "failed");
-                dispatcher = request.getRequestDispatcher("/login");
+            
+                 dispatcher = request.getRequestDispatcher("Login.jsp");
+                 dispatcher.forward(request, response);
+               // request.setAttribute("status", "failed");
+                
                
             }
-            dispatcher.forward(request, response);
+            
             
         } catch (Exception e) {
             e.printStackTrace();

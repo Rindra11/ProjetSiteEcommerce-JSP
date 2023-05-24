@@ -18,16 +18,10 @@
     </head>
     <body>
         
-        <%
-            Connection conn = Dbconnect.getConn();
-            out.print(conn);
-        %>
         <div class="container">
              <img src="assets/image/adm.png"/>
             <div class="title">Inscription</div>
-            &nbsp;&nbsp;&nbsp;
-       
-            
+            &nbsp;&nbsp;&nbsp;       
             <form action="registre" method="post">
             <div class="user-details">
                 <div class="input-box">

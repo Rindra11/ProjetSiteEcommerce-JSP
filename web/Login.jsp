@@ -33,7 +33,7 @@
              
         <div class="container">
              <div class="title">Connectez-vous</div>
-             <Form action="LoginAction.jsp" method="post">
+             <Form action="login" method="post">
                 <div class="user-details">
                 <div class="input-box">
                     <span class="details">Nom d'Utilisateur:</span> 

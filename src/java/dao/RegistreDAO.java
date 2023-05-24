@@ -73,12 +73,10 @@ public class RegistreDAO {
  }
    
    public boolean registreRegister(Registre res)
-   {
-       
+   {  
        boolean f=false;
        try{
            String sql="insert into registre(Name,CIN,Telephone,Adres_Email,pass,passw) values(?,?,?,?,?,?)";
-           
            PreparedStatement ps=conn.prepareStatement(sql);
            ps.setString(1,res.getName());
            ps.setString(2,res.getCIN());
@@ -88,12 +86,9 @@ public class RegistreDAO {
            ps.setString(6,res.getPassw());
            ps.executeUpdate();
                
-           }catch (Exception e)
-           {
-            //   
+           }catch (Exception e){  
            e.printStackTrace();
        }
-       
        return f;
                 
   

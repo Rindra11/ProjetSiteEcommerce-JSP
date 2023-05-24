@@ -14,8 +14,11 @@ public class Dbconnect {
     
      public static Connection getConn() 
      {
+
+       
         try{
             if (conn == null) {
+                
                  Class.forName("com.mysql.cj.jdbc.Driver");
                  String url="jdbc:mysql://localhost:3306/siteecommerce";
                  String username="root";
@@ -27,5 +30,10 @@ public class Dbconnect {
         }
     
         return conn;
+    }
+     
+     public static void main(String[] args) {
+        Dbconnect.getConn();
+        
     }
 }
