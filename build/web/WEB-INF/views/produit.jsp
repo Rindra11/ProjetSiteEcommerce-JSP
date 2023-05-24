@@ -30,10 +30,7 @@
         <title>Produit</title>
     </head>
     <body>
-        <%
-            Connection conn = Dbconnect.getConn();
-            out.print(conn);
-        %>
+      
         <%@include file="../include/navbar.jsp" %>
         <br><br>
         <div class="container">
@@ -55,6 +52,10 @@
                     <span class="details">Prix :</span> 
                     <input type="number"  name="Prix_prod"  placeholder="Saiser le prix" autocomplete="off" required>
                 </div>
+                <div class="input-box">
+                    <span class="details">Image :</span> 
+                    <input type="file"  name="image_prod"  placeholder="" autocomplete="off" required>
+                </div>
                 
             </div> 
             <div class="button">
@@ -71,6 +72,7 @@
                 <th scope="col" style="width: 10%">Nom du produit</th>
                 <th scope="col" style="width: 10%">Quantité</th>
                 <th scope="col" style="width: 10%">Prix</th>
+                <th scope="col" style="width: 10%">Image</th>
                 <th scope="col" style="width: 10%">Action</th>
             </tr>
          </thead>
@@ -86,9 +88,17 @@
                  <td scope="row"><%= p.getQte_prod()%></td>
                  <td scope="row"><%= p.getPrix_prod()%></td> 
                  <td>
+                     <img src="/assets/image/" alt="Description de l'image" width="100" height="100">
+                 </td>
+                 <td>
                     <a href="${pageContext.request.contextPath}/modifier?Id_prod=<c:out value="<%= p.getId_prod() %>"/>"class="btn btn-sm btn-outline-primary">Modification</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="${pageContext.request.contextPath}/supprimer?Id_prod=<c:out value="<%= p.getId_prod() %>"/>"class="btn btn-sm btn-outline-danger">Suppression</a>
+                     <!-- Exemple d'option de commande -->
+                <form action="ajouterAuPanier.jsp" method="post">
+                  <input type="hidden" name="Id_prod" value="<%= p.getId_prod() %>">
+                  <button type="submit" class="btn btn-sm btn-outline-success">Ajouter au panier</button>
+                </form>
                  </td>
             </tr>
            <%

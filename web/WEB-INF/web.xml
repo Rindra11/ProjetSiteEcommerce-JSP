@@ -28,6 +28,10 @@
         <servlet-name>ServletProduit</servlet-name>
         <servlet-class>servlet.ServletProduit</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AjouterAuPanierServlet</servlet-name>
+        <servlet-class>servlet.AjouterAuPanierServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MehodesServlet</servlet-name>
         <url-pattern>/MehodesServlet</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>ServletProduit</servlet-name>
         <url-pattern>/ServletProduit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AjouterAuPanierServlet</servlet-name>
+        <url-pattern>/AjouterAuPanierServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

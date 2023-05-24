@@ -17,7 +17,23 @@
         <title>Ajout produit</title>
     </head>
     <body>
-        
+        <%
+            // Récupérer les données du formulaire
+            String productId = request.getParameter("Id_prod");
+
+            // Effectuer les opérations d'ajout au panier (exemple simplifié)
+            Panier panier = (Panier) session.getAttribute("panier");
+            if (panier == null) {
+              panier = new Panier();
+              session.setAttribute("panier", panier);
+            }
+
+            panier.ajouterProduit(productId);
+
+            // Rediriger vers la page du panier
+            response.sendRedirect("pageDuPanier.jsp");
+            %>
+
     </body>
     
     
