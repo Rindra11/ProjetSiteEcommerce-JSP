@@ -123,23 +123,23 @@
             <form action="Produit" method="post">
               <div class="user-details">
                 <div class="input-box">
-                  <span class="details">Identité du produit:</span>
-                  <input type="number" name="Id_prod" placeholder="Saisir son identité" autocomplete="off" required>
+                  <span class="details"></span>
+                  <input type="number" name="Id_prod" placeholder="Saisir identité du produit" autocomplete="off" required>
                 </div>
                 <div class="input-box">
-                  <span class="details">Nom du produit:</span>
-                  <input type="text" name="Nom_prod" placeholder="Saisir le nom" autocomplete="off" required>
+                  <span class="details"></span>
+                  <input type="text" name="Nom_prod" placeholder="Saisir le nom du produit" autocomplete="off" required>
                 </div>
                 <div class="input-box">
-                  <span class="details">Quantité:</span>
+                  <span class="details"></span>
                   <input type="number" name="Qte_prod" placeholder="Saisir la quantité" autocomplete="off" required>
                 </div>
                 <div class="input-box">
-                  <span class="details">Prix :</span>
+                  <span class="details"></span>
                   <input type="number" name="Prix_prod" placeholder="Saisir le prix" autocomplete="off" required>
                 </div>
                 <div class="input-box">
-                  <span class="details">Image :</span>
+                  <span class="details"></span>
                   <input type="file" name="image_prod" placeholder="" autocomplete="off" required>
                 </div>
               </div>
@@ -151,8 +151,16 @@
             </div>
 <!--table--->
     <div class="col">
-         
-            <table class="table" style="width:80%;height: 80%; justify-content:center;">
+          <table class="table" style="width:80%;height: 80%; justify-content:center;">
+              <form action="RechercheProduit" method="get">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Rechercher un produit par nom" name="search">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Rechercher</button>
+                  </div>
+                </div>
+                </form>
+
              <thead class="thead-dark" style="background: #000000;">
                  <tr style="color: #ffffff;">
                     <th scope="col" style="width: 10%">Numéro</th>
@@ -167,7 +175,7 @@
 
            <%
             List<Produits> list = ( List<Produits>) request.getAttribute("produits");
-           for(Produits p :list ){
+            for(Produits p :list ){
            %>
              <tr>
                  <td scope="row"><%= p.getId_prod() %></td>
@@ -193,13 +201,15 @@
             
         %>
   </tbody>
-</table>
-</div>
-            </div>
-        </div>
-        
-      
-        
+    </table>
+  <tbody>
+  <% for (Produits p : list) { %>
+  <!-- Affichage des produits filtrés -->
+  <% } %>
+</tbody>
+
+    </div>
+          </div>
     </body>
     
     <!--Javascript Link-->
