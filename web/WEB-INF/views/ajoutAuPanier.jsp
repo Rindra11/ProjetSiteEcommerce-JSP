@@ -4,7 +4,7 @@
     Author     : Rindra
 --%>
 
-<%@page import="dao.Panier"%>
+<%@page import="dao.PanierDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,22 +18,16 @@
         <title>Ajout produit</title>
     </head>
     <body>
-        <%
-            // Récupérer les données du formulaire
-            String productId = request.getParameter("Id_prod");
+        
+        <form action="Produit" method="post">
+            <input type="hidden" name="id_produit" value="123">
+            <label for="quantite">Quantité :</label>
+            <input type="number" name="quantite" id="quantite" min="1" required>
+            <button type="submit">Ajouter au panier</button>
+      </form>
 
-            // Effectuer les opérations d'ajout au panier (exemple simplifié)
-            Panier panier = (Panier) session.getAttribute("panier");
-            if (panier == null) {
-              panier = new Panier();
-              session.setAttribute("panier", panier);
-            }
-
-            panier.ajouterProduit(productId);
-
-            // Rediriger vers la page du panier
-            response.sendRedirect("ajoutAuPanier.jsp");
-            %>
+        
+       
 
     </body>
     

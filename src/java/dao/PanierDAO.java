@@ -5,11 +5,11 @@ import java.util.List;
 import models.Produits;
 
 
-public class Panier {
+public class PanierDAO {
   private List<Produits> listeProduits;
   private double total;
   
-  public Panier() {
+  public PanierDAO() {
     listeProduits = new ArrayList<>();
     total = 0.0;
   }

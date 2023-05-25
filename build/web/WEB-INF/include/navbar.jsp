@@ -19,7 +19,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="${pageContext.request.contextPath}/Produit" style="color:#f39c12">Ajouter un produit</a>
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="${pageContext.request.contextPath}/gerer" style="color:#f39c12">Gérer les commandes</a>
+                    <a href="${pageContext.request.contextPath}/AjoutAuPanier" style="color:#f39c12">Gérer les commandes</a>
                </h4>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2"  type="search" placeholder="entrer vos recherches....." aria-label="Search">
