@@ -31,68 +31,83 @@
         <title>Produit</title>
         
         <style>
-            .container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
+        .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+      }
 
-.user-details {
-  margin-bottom: 20px;
-}
+        .user-details {
+          margin-bottom: 20px;
+        }
 
-.user-details .input-box {
-  position: relative;
-  margin-bottom: 15px;
-}
+        .user-details .input-box {
+          position: relative;
+          margin-bottom: 15px;
+        }
 
-.user-details .input-box input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-bottom: 1px solid #888;
-  background-color: transparent;
-}
+        .user-details .input-box input {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border: none;
+          border-bottom: 1px solid #888;
+          background-color: transparent;
+        }
 
-.user-details .input-box input:focus {
-  outline: none;
-  border-color: #38a1db;
-}
+        .user-details .input-box input:focus {
+          outline: none;
+          border-color: #38a1db;
+        }
 
-.user-details .input-box span.details {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 14px;
-  color: #888;
-  pointer-events: none;
-  transition: 0.5s;
-}
+        .user-details .input-box span.details {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 14px;
+          color: #888;
+          pointer-events: none;
+          transition: 0.5s;
+        }
 
-.user-details .input-box input:focus + span.details,
-.user-details .input-box input:valid + span.details {
-  transform: translateY(-25px);
-  font-size: 12px;
-  color: #38a1db;
-}
+        .user-details .input-box input:focus + span.details,
+        .user-details .input-box input:valid + span.details {
+          transform: translateY(-25px);
+          font-size: 12px;
+          color: #38a1db;
+        }
 
-.button input[type="submit"] {
-  background-color: #38a1db;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+        .button input[type="submit"] {
+          background-color: #38a1db;
+          color: #fff;
+          padding: 10px 20px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
 
-.button input[type="submit"]:hover {
-  background-color: #3194c9;
-}
+        .button input[type="submit"]:hover {
+          background-color: #3194c9;
+        }
+        /*table*/
+        .rows {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .col {
+          flex: 1;
+        }
+        .table {
+          margin-top: 20px;
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
 
         </style>
     </head>
@@ -131,9 +146,10 @@
               </div>
             </form>
           </div>
+            </div>
 <!--table--->
     <div class="col">
-          <br><br><br>
+         
             <table class="table" style="width:50%; justify-content:center;">
              <thead class="thead-dark" style="background: #000000;">
                  <tr style="color: #ffffff;">
