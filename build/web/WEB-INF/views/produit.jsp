@@ -32,11 +32,11 @@
         
         <style>
         .container {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
       }
 
         .user-details {
@@ -103,7 +103,9 @@
           flex: 1;
         }
         .table {
-          margin-top: 20px;
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
           background-color: #ffffff;
           border-radius: 10px;
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -150,7 +152,7 @@
 <!--table--->
     <div class="col">
          
-            <table class="table" style="width:50%; justify-content:center;">
+            <table class="table" style="width:80%;height: 80%; justify-content:center;">
              <thead class="thead-dark" style="background: #000000;">
                  <tr style="color: #ffffff;">
                     <th scope="col" style="width: 10%">Numéro</th>
