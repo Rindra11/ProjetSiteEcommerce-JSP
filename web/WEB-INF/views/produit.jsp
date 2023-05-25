@@ -117,34 +117,35 @@
       
       <%@include file="../include/navbar.jsp" %>
         <br><br>
+        <!--Formulaire d'ajout--->
         <div class="rows">
             <div class="col">
                 <div class="container">
-            <form action="Produit" method="post">
-              <div class="user-details">
-                <div class="input-box">
-                  <span class="details"></span>
-                  <input type="number" name="Id_prod" placeholder="Saisir identité du produit" autocomplete="off" required>
-                </div>
-                <div class="input-box">
-                  <span class="details"></span>
-                  <input type="text" name="Nom_prod" placeholder="Saisir le nom du produit" autocomplete="off" required>
-                </div>
-                <div class="input-box">
-                  <span class="details"></span>
-                  <input type="number" name="Qte_prod" placeholder="Saisir la quantité" autocomplete="off" required>
-                </div>
-                <div class="input-box">
-                  <span class="details"></span>
-                  <input type="number" name="Prix_prod" placeholder="Saisir le prix" autocomplete="off" required>
-                </div>
-                <div class="input-box">
-                  <span class="details"></span>
-                  <input type="file" name="image_prod" placeholder="" autocomplete="off" required>
-                </div>
-              </div>
-              <div class="button">
-                <input type="submit" value="Ajouter">
+                    <form action="Produit" method="post">
+                      <div class="user-details">
+                        <div class="input-box">
+                          <span class="details"></span>
+                          <input type="number" name="Id_prod" placeholder="Saisir identité du produit" autocomplete="off" required>
+                        </div>
+                        <div class="input-box">
+                          <span class="details"></span>
+                          <input type="text" name="Nom_prod" placeholder="Saisir le nom du produit" autocomplete="off" required>
+                        </div>
+                        <div class="input-box">
+                          <span class="details"></span>
+                          <input type="number" name="Qte_prod" placeholder="Saisir la quantité" autocomplete="off" required>
+                        </div>
+                        <div class="input-box">
+                          <span class="details"></span>
+                          <input type="number" name="Prix_prod" placeholder="Saisir le prix" autocomplete="off" required>
+                        </div>
+                        <div class="input-box">
+                          <span class="details"></span>
+                          <input type="file" name="image_prod" placeholder="" autocomplete="off" required>
+                        </div>
+                      </div>
+                      <div class="button">
+                     <input type="submit" value="Ajouter">
               </div>
             </form>
           </div>
@@ -152,15 +153,6 @@
 <!--table--->
     <div class="col">
           <table class="table" style="width:80%;height: 80%; justify-content:center;">
-              <form action="RechercheProduit" method="get">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Rechercher un produit par nom" name="search">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit">Rechercher</button>
-                  </div>
-                </div>
-                </form>
-
              <thead class="thead-dark" style="background: #000000;">
                  <tr style="color: #ffffff;">
                     <th scope="col" style="width: 10%">Numéro</th>
@@ -172,7 +164,7 @@
                 </tr>
              </thead>
         <tbody>
-
+<!--Affichage donnée recupérer--->
            <%
             List<Produits> list = ( List<Produits>) request.getAttribute("produits");
             for(Produits p :list ){
@@ -186,9 +178,9 @@
                      <img src="/assets/image/" alt="Description de l'image" width="100" height="100">
                  </td>
                  <td>
-                    <a href="${pageContext.request.contextPath}/modifier?Id_prod=<c:out value="<%= p.getId_prod() %>"/>"class="btn btn-sm btn-outline-primary">Modification</a>
+                    <a href="${pageContext.request.contextPath}/modifier?Id_prod=${p.getId_prod()}" class="btn btn-sm btn-outline-primary">Modification</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="${pageContext.request.contextPath}/supprimer?Id_prod=<c:out value="<%= p.getId_prod() %>"/>"class="btn btn-sm btn-outline-danger">Suppression</a>
+                    <a href="${pageContext.request.contextPath}/supprimerProduit?Id_prod=${p.getId_prod()}" class="btn btn-sm btn-outline-danger">Suppression</a>
                      <!--option de commande -->
                 <form action="AjoutAuPanier" method="post">
                   <input type="hidden" name="Id_prod" value="<%= p.getId_prod() %>">
@@ -197,19 +189,12 @@
                  </td>
             </tr>
            <%
-           }
-            
+           }  
         %>
   </tbody>
     </table>
-  <tbody>
-  <% for (Produits p : list) { %>
-  <!-- Affichage des produits filtrés -->
-  <% } %>
-</tbody>
-
     </div>
-          </div>
+  </div>
     </body>
     
     <!--Javascript Link-->

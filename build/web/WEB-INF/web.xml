@@ -36,6 +36,10 @@
         <servlet-name>RechercheProduitServlet</servlet-name>
         <servlet-class>servlet.RechercheProduitServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestServletTest</servlet-name>
+        <servlet-class>servlet.TestServletTest</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MehodesServlet</servlet-name>
         <url-pattern>/MehodesServlet</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>RechercheProduitServlet</servlet-name>
         <url-pattern>/RechercheProduitServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServletTest</servlet-name>
+        <url-pattern>/TestServletTest</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

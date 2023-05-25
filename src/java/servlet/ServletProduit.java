@@ -88,7 +88,7 @@ public class ServletProduit extends HttpServlet {
      ProduitsDAO dao=new ProduitsDAO(Dbconnect.getConn());
      boolean f=dao.produitsProduit(pdo);
 
-     response.sendRedirect("/Produit");
+    // response.sendRedirect("/Produit");
     }
 
     

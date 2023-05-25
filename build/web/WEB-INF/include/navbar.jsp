@@ -20,13 +20,13 @@
                     <a href="${pageContext.request.contextPath}/Produit" style="color:#f39c12">Ajouter un produit</a>
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="${pageContext.request.contextPath}/AjoutAuPanier" style="color:#f39c12">Gérer les commandes</a>
-               </h4>
-    <form class="form-inline my-2 my-lg-0">
+                </h4>
+    <!--fonctionnalité recherche-->
+   <form action="RechercheProduit" method="get" class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2"  type="search" placeholder="Rechercher un produit par nom" name="Search">
-      <button class="btn btn-danger my-2 my-sm-0" type="submit">Rechercher</button>
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Rechercher</button>
     </form>
             </nav>
         </div>
-    
     </body>
 </html>

@@ -2,8 +2,10 @@ package dao;
 
 import configuration.Dbconnect;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 import models.Produits;
@@ -54,6 +56,40 @@ public class ProduitsDAO {
        }
        return f;
    }
+     
+     public boolean  supprimerProduit (int Id_prod)
+     {
+         boolean s=false;
+         try{
+             String sql = "DELETE FROM produitss WHERE Id_prod = ?";
+                PreparedStatement ps=conn.prepareStatement(sql);
+                ps.setInt(1,Id_prod);
+                ps.executeUpdate();
+               
+           }catch (Exception e){  
+           e.printStackTrace();
+       }
+       return s;
+         
+     }
+      /* supprimer donnée reo
+      public void supprimerProduit(int idProduit) {
+        // Établir la connexion à la base de données
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siteecommerce", "root", "")) {
+            // Préparer la requête SQL pour supprimer le produit
+            String sql = "DELETE FROM produitss WHERE Id_prod = ?";
+            try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                // Définir le paramètre de l'identifiant du produit à supprimer
+                statement.setInt(1, idProduit);
+                // Exécuter la requête de suppression
+                statement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Gérer les exceptions appropriées
+        }
+    }*/
+
      
       private static Connection connect() throws Exception{
        return Dbconnect.getConn();
