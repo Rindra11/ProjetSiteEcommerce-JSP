@@ -58,8 +58,8 @@ public class CommandeServlet extends HttpServlet {
             Logger.getLogger(ServletProduit.class.getName()).log(Level.SEVERE, null, ex);
         }
                request.setAttribute("produits", produitses);
-       request.getRequestDispatcher("/WEB-INF/views/commander.jsp").forward(request, response);
-       processRequest(request, response);
+                request.getRequestDispatcher("/WEB-INF/views/commander.jsp").forward(request, response);
+                processRequest(request, response);
     }
 
     
@@ -69,16 +69,16 @@ public class CommandeServlet extends HttpServlet {
         processRequest(request, response);
        // Récupérer les valeurs du formulaire
             String produitId = request.getParameter("produitId");
-            String quantite = request.getParameter("quantite");
-            String prix = request.getParameter("prix");
+            String Qte_prod = request.getParameter("Qte_prod");
+            String Prix_prod = request.getParameter("Prix_prod");
 
             // Effectuer le calcul du montant total
-            double montantTotal = Double.parseDouble(prix) * Integer.parseInt(quantite);
+            double montantTotal = Double.parseDouble(Prix_prod) * Integer.parseInt(Qte_prod);
 
             // Autres traitements liés à la commande...
 
             // Rediriger vers la page de confirmation de commande
-            response.sendRedirect("Confirmation");
+               response.sendRedirect("Confirmation");
     }
 
     

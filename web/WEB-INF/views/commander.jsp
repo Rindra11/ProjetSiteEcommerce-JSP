@@ -95,7 +95,7 @@
             <div class="header">
                 <h2>Faire votre Commande</h2>
             </div>
-           <form action="commande" method="post">
+           <form action="Commander" method="post">
                 <select name="produitId">
                     <%  List<Produits> list = (List<Produits>) request.getAttribute("produits");
                         for (Produits p : list) {
