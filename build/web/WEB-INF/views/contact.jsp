@@ -1,4 +1,4 @@
-<%@page import="dao.RegistreDAO"%>
+
 <%@page import="java.util.List"%>
 <%@page import="models.Registre"%>
 <%@page import="java.sql.*"%>
@@ -27,35 +27,35 @@
        <table class="table">
            <thead style="background: #000000">
                <tr style="color: #ffffff">
-      <th scope="col">Numéro</th>
-      <th scope="col">Nom et Prénoms</th>
-      <th scope="col">CIN</th>
-      <th scope="col">Téléphone</th>
-      <th scope="col">Nom d'utilisateur</th>
-      <th scope="col">Mot de passe</th>
-      <th scope="col">Confirmation</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-              <c:forEach var="p" items="${contact}">
+                    <th scope="col">Numéro</th>
+                    <th scope="col">Nom et Prénoms</th>
+                    <th scope="col">CIN</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Nom d'utilisateur</th>
+                    <th scope="col">Mot de passe</th>
+                    <th scope="col">Confirmation</th>
+                    <th scope="col">Action</th>
+               </tr>
+        </thead>
+        <tbody>
+             <%
+                List<Registre> list = ( List<Registre>) request.getAttribute("registre");
+                for(Registre p :list ){
+             %>
                   <tr>
-                      <td>${p.Id_Name}</td>
-                      <td>${p.Name.substring(0,10)}...</td>
-                      <td>${p.CIN.substring(0,10)}...</td>
-                      <td>${p.Telephone.substring(0,10)}...</td>
-                      <td>${p.Adres.substring(0,10)}...</td>
-                      <td>${p.pass.substring(0,10)}...</td>
-                      <td>${p.passw.substring(0,10)}...</td>
-                      <td>
+                      <td><%= p.getName() %></td>
+                      <td><%= p.getCIN() %></td>
+                      <td><%= p.getTelephone() %></td>
+                      <td><%= p.getPass() %></td>
+                      <td><%= p.getPassw() %></td>
+                      <td> 
                           <a href="${pageContext.request.contextPath}/modifier?Id_Name=<c:out value="${p.Id_Name}"/>"class="btn btn-sm btn-outline-primary">Modification</a>
                            &nbsp;&nbsp;&nbsp;&nbsp;
                           <a href="${pageContext.request.contextPath}/supprimer?Id_Name=<c:out value="${p.Id_Name}"/>"class="btn btn-sm btn-outline-danger">Suppression</a>
                       </td>
                       
                   </tr>
-              </c:forEach>
-        
+              
      
   </tbody>
 </table>

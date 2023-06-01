@@ -54,9 +54,9 @@ public class ServletProduit extends HttpServlet {
                   Produits p = new Produits();
                   p.setId_prod(rs.getInt("Id_prod"));
                   p.setNom_prod(rs.getString("Nom_prod"));
-                   p.setPrix_prod(rs.getFloat("Prix_prod"));
-                    p.setQte_prod(rs.getString("Qte_prod"));
-                    produitses.add(p);
+                  p.setPrix_prod(rs.getFloat("Prix_prod"));
+                  p.setQte_prod(rs.getString("Qte_prod"));
+                  produitses.add(p);
                     
             }
         } catch (SQLException ex) {
@@ -68,6 +68,29 @@ public class ServletProduit extends HttpServlet {
          request.getRequestDispatcher("/WEB-INF/views/produit.jsp").forward(request, response);
         processRequest(request, response);
     }
+    /*
+     protected void GetFormUpdate(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        try {
+            ResultSet rs = Dbconnect.getConn().createStatement().executeQuery("SELECT * FROM produitss where Id_prod='?'");
+            while(rs.next())
+              {
+                  Produits p = new Produits();
+                  p.setId_prod(rs.getInt("Id_prod"));
+                  p.setNom_prod(rs.getString("Nom_prod"));
+                  p.setPrix_prod(rs.getFloat("Prix_prod"));
+                  p.setQte_prod(rs.getString("Qte_prod"));        
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServletProduit.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        request.setAttribute("produits", p);
+        
+         request.getRequestDispatcher("/WEB-INF/views/produit.jsp").forward(request, response);
+        processRequest(request, response);
+    }*/
 
    
     @Override
@@ -88,7 +111,7 @@ public class ServletProduit extends HttpServlet {
      ProduitsDAO dao=new ProduitsDAO(Dbconnect.getConn());
      boolean f=dao.produitsProduit(pdo);
 
-    // response.sendRedirect("/Produit");
+    response.sendRedirect("Produit");
     }
 
     

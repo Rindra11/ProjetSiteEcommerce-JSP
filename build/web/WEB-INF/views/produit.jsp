@@ -9,10 +9,7 @@
 <%@page import="dao.ProduitsDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-
  
 <!DOCTYPE html>
 <html>
@@ -178,12 +175,12 @@
                      <img src="/assets/image/" alt="Description de l'image" width="100" height="100">
                  </td>
                  <td>
-                    <a href="${pageContext.request.contextPath}/modifier?Id_prod=${p.getId_prod()}" class="btn btn-sm btn-outline-primary">Modification</a>
+                    <a href="${pageContext.request.contextPath}/Produit?Id_prod=<%= p.getId_prod() %>" class="btn btn-sm btn-outline-primary">Modification</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="${pageContext.request.contextPath}/supprimerProduit?Id_prod=${p.getId_prod()}" class="btn btn-sm btn-outline-danger">Suppression</a>
+                    <a href="${pageContext.request.contextPath}/supprimer?Id_prod=<%= p.getId_prod() %>" class="btn btn-sm btn-outline-danger">Suppression</a>
                      <!--option de commande -->
                 <form action="AjoutAuPanier" method="post">
-                  <input type="hidden" name="Id_prod" value="<%= p.getId_prod() %>">
+                  <input type="hidden" name="Id_prod" value="<%= p.getQte_prod()%>">
                   <button type="submit" class="btn btn-sm btn-outline-success">Ajouter au panier</button>
                 </form>
                  </td>

@@ -14,8 +14,6 @@ public class Dbconnect {
     
      public static Connection getConn() 
      {
-
-       
         try{
             if (conn == null) {
                 

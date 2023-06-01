@@ -56,6 +56,24 @@ public class ProduitsDAO {
        }
        return f;
    }
+    /*MODIFICATION*/
+      public boolean updateProduit(Produits up)
+   {  
+       boolean n=false;
+       try{
+           String sql="UPDATE `produitss` SET `Nom_prod` = '?', `Qte_prod` = '?', `Prix_prod` = '?' WHERE `produitss`.`Id_prod` = '?'";
+           PreparedStatement ps=conn.prepareStatement(sql);
+           ps.setInt(4,up.getId_prod());
+           ps.setString(1,up.getNom_prod());
+           ps.setString(2,up.getQte_prod());
+           ps.setFloat(3,up.getPrix_prod());
+           ps.executeUpdate();
+               
+           }catch (Exception e){  
+           e.printStackTrace();
+       }
+       return n;
+   }
      
      public boolean  supprimerProduit (int Id_prod)
      {

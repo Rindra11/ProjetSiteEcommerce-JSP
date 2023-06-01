@@ -40,6 +40,14 @@
         <servlet-name>TestServletTest</servlet-name>
         <servlet-class>servlet.TestServletTest</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CommandeServlet</servlet-name>
+        <servlet-class>servlet.CommandeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmationServlet</servlet-name>
+        <servlet-class>servlet.ConfirmationServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MehodesServlet</servlet-name>
         <url-pattern>/MehodesServlet</url-pattern>
@@ -79,6 +87,30 @@
     <servlet-mapping>
         <servlet-name>TestServletTest</servlet-name>
         <url-pattern>/TestServletTest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CommandeServlet</servlet-name>
+        <url-pattern>/CommandeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RegistreServlet</servlet-name>
+        <servlet-class>servlet.RegistreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistreServlet</servlet-name>
+        <url-pattern>/reg</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+    <servlet-mapping>
+        <servlet-name>ConfirmationServlet</servlet-name>
+        <url-pattern>/ConfirmationServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

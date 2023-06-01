@@ -24,11 +24,10 @@
         <title>Login</title>
     </head>
     <body>
-        <!--connexion--->
-         <%
+        <!--connexion
             Connection conn = Dbconnect.getConn();
             out.print(conn);
-        %>
+        --->
         <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
              
         <div class="container">
