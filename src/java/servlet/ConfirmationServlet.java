@@ -47,6 +47,16 @@ public class ConfirmationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+       int quantite = Integer.parseInt(request.getParameter("quantite"));
+       float prix = Float.parseFloat(request.getParameter("prix"));
+        
+        float prixTotal = quantite*prix;
+        
+        request.setAttribute("quantite", quantite);
+        request.setAttribute("prixTotal", prixTotal);
+        
+        
        request.getRequestDispatcher("/WEB-INF/views/confirmation.jsp").forward(request, response);
        processRequest(request, response);
     }
@@ -54,7 +64,7 @@ public class ConfirmationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       this.doGet(request, response);
     }
 
     /**

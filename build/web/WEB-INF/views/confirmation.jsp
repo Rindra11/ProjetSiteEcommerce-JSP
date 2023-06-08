@@ -63,8 +63,8 @@
 <!--commande ici -->
     <ul>
         <li>Produit : <%= request.getParameter("produitId") %></li>
-        <li>Quantité : <%= request.getParameter("Qte_prod") %></li>
-        <li>Montant total : <%= request.getParameter("montantTotal") %></li>
+        <li>Quantité : <%= request.getAttribute("quantite") %></li>
+        <li>Montant total : <%= request.getAttribute("prixTotal") %></li>
         
     </ul>
 
