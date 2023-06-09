@@ -26,7 +26,8 @@
         <title>Home</title>
         <style>         
             #hero {
-             background-image: url("assets/image/img6.png");
+             background-image: url("assets/image/Capture.PNG");
+             background-repeat: no-repeat, repeat;
              width: 100%;
              height: 80vh;
              background-size: cover;
@@ -38,7 +39,7 @@
              justify-content: center;  
             }
             .navbar{
-                background: linear-gradient(135deg, #71b7e6,#9b59b6);
+                background: linear-gradient(56deg,#08979D,#6EC6CA);
                 width: 100%;
 }
             #newsletter{
@@ -60,13 +61,13 @@
         <div class="header">
              <a href="#"><img src="assets/image/sary6.png" class="logo" alt=""></a>
            <h3>
-        <a href="${pageContext.request.contextPath}/home" > Accueil</a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/Shop">Shopping</a>
-         &nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/Produit">Produits</a>
-        &nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/Contact">Contact</a>
+                <a href="${pageContext.request.contextPath}/home" > Accueil</a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="${pageContext.request.contextPath}/Shop">Shopping</a>
+                 &nbsp;&nbsp;&nbsp;
+                <a href="${pageContext.request.contextPath}/Produit">Produits</a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="${pageContext.request.contextPath}/Contact">Contact</a>
            </h3> 
      <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2"  type="search" placeholder="entrer vos recherches....." aria-label="Search">

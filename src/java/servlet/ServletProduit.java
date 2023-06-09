@@ -56,6 +56,7 @@ public class ServletProduit extends HttpServlet {
                   p.setNom_prod(rs.getString("Nom_prod"));
                   p.setPrix_prod(rs.getFloat("Prix_prod"));
                   p.setQte_prod(rs.getString("Qte_prod"));
+                  p.setImage_prod(rs.getString("image_prod"));
                   produitses.add(p);
                     
             }
