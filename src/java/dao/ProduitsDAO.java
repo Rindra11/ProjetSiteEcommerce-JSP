@@ -31,7 +31,7 @@ public class ProduitsDAO {
             Statement statement = conn.createStatement();
             res = statement.executeQuery(query);
             while(res.next()){
-                produitList.add(new Produits(res.getInt("Id_prod"), res.getString("Nom_prod"), res.getString("Qte_prod"), res.getFloat("Prix_prod")));
+                produitList.add(new Produits(res.getInt("Id_prod"), res.getString("Nom_prod"), res.getString("Qte_prod"), res.getFloat("Prix_prod"), res.getString("image_prod")));
             }
             System.out.println("\n ==> Oui\n");
        }
@@ -43,12 +43,13 @@ public class ProduitsDAO {
    {  
        boolean f=false;
        try{
-           String sql="insert into produitss(Id_prod,Nom_prod,Qte_prod,Prix_prod) values(?,?,?,?)";
+           String sql="insert into produitss(Id_prod,Nom_prod,Qte_prod,Prix_prod,image_prod) values(?,?,?,?,?)";
            PreparedStatement ps=conn.prepareStatement(sql);
            ps.setInt(1,pdo.getId_prod());
            ps.setString(2,pdo.getNom_prod());
            ps.setString(3,pdo.getQte_prod());
            ps.setFloat(4,pdo.getPrix_prod());
+           ps.setString(5,pdo.getImage_prod());
            ps.executeUpdate();
                
            }catch (Exception e){  

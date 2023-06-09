@@ -4,27 +4,39 @@ public class Produits {
     private int Id_prod;
     private String Nom_prod,Qte_prod;
     private Float Prix_prod;
+    private String image_prod;
+
     
     
     public Produits(){
         super();
     }
     
-    public Produits(int Id_prod, String Nom_prod, String Qte_prod, Float Prix_prod) {
+    public Produits(int Id_prod, String Nom_prod, String Qte_prod, Float Prix_prod, String  image_prod) {
        super();
         this.Id_prod = Id_prod;
         this.Nom_prod = Nom_prod;
         this.Qte_prod = Qte_prod;
         this.Prix_prod = Prix_prod;
+        this.image_prod = image_prod;
     
 }
-    public Produits( String Nom_prod, String Qte_prod, Float Prix_prod){
+    public Produits( String Nom_prod, String Qte_prod, Float Prix_prod, String image_prod){
          super();
          this.Nom_prod = Nom_prod;
          this.Qte_prod = Qte_prod;
          this.Prix_prod = Prix_prod;
+         this.image_prod = image_prod;
          
      }
+
+    public String getImage_prod() {
+        return image_prod;
+    }
+
+    public void setImage_prod(String image_prod) {
+        this.image_prod = image_prod;
+    }
 
     public int getId_prod() {
         return Id_prod;
